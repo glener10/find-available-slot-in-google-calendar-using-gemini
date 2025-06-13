@@ -2,6 +2,14 @@
 
 <p align="center"> 🚀 This script is designed to get Google Calendar, find gaps in a given time range, and create a test event in that range if the user accepts  </p>
 
+Execution Example
+
+![execution example](docs/images/example1.png)
+
+Event Created
+
+![event created](docs/images/example2.png)
+
 <h3>🏁 Table of Contents</h3>
 
 <br>
