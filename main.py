@@ -24,6 +24,7 @@ def main():
 
     if not events:
       print(f"no events in this interval")
+      #TODO: no events is not an error, fix that
       return
 
     print(f"found {len(events)} events")
