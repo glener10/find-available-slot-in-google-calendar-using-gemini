@@ -1,3 +1,7 @@
+#TODO: no events is not an error
+#TODO: test sending invite to other email
+#TODO: other api, instead of searching for all events, search for available times
+#TODO: use AI to ask when you want the event and handle errors
 import datetime
 
 from googleapiclient.discovery import build
@@ -24,7 +28,6 @@ def main():
 
     if not events:
       print(f"no events in this interval")
-      #TODO: no events is not an error, fix that
       return
 
     print(f"found {len(events)} events")
