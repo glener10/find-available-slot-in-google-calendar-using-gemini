@@ -1,6 +1,3 @@
-#TODO: no events is not an error
-#TODO: test sending invite to other email
-#TODO: other api, instead of searching for all events, search for available times
 #TODO: use AI to ask when you want the event and handle errors
 import datetime
 
@@ -27,6 +24,7 @@ def main():
     events = find_events(service, timeMin, timeMax)
 
     if not events:
+      #TODO: no events is not an error
       print(f"no events in this interval")
       return
 

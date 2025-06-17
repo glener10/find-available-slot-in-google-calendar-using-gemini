@@ -5,7 +5,7 @@ from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 
-SCOPES = ["https://www.googleapis.com/auth/calendar.events"]
+SCOPES = ["https://www.googleapis.com/auth/calendar.readonly", "https://www.googleapis.com/auth/calendar.events"]
 
 def get_credentials():
   creds = None
@@ -27,7 +27,7 @@ def find_events(service, timeMin, timeMax):
   events_result = (
       service.events()
       .list(
-          calendarId="primary",
+          calendarId="glenerpizzolato@gmail.com", #TODO: update function parameters and initial args to pass calendarId
           timeMin=timeMin,
           timeMax=timeMax,
           maxResults=10,
@@ -88,6 +88,10 @@ def create_event(service, next_available_slot, EVENT_GAP_INTERVAL_MINUTES):
   TIME_ZONE = "America/Sao_Paulo"
   event = {
     "summary": "Scheduler API Test Event",
+    #TODO: to send an invite
+    # "attendees": [
+    #   {"email": "glenerpizzolato.aluno@unipampa.edu.br"}
+    # ],
     "start": {"dateTime": next_available_slot, "timeZone": TIME_ZONE},
     "end": {
       "dateTime": (
