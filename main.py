@@ -16,7 +16,7 @@ def main():
     service = build("calendar", "v3", credentials=creds)
 
     now = datetime.datetime.now(tz=datetime.timezone.utc)
-    timeMin = (now + datetime.timedelta(minutes=30)).isoformat()
+    timeMin = (now + datetime.timedelta(minutes=int(args.waiting))).isoformat()
     end_of_day = now.replace(hour=23, minute=59, second=59, microsecond=999999)
     timeMax = end_of_day.isoformat()
 
@@ -32,7 +32,7 @@ def main():
       print("❌ no available slots found")
       return
 
-    user_input = input(f"do you want to create an event at {ai_finding_next_availabe_slot}? (y/n): ")
+    user_input = input(f"❔ do you want to create the event '{args.name}' at {ai_finding_next_availabe_slot} during {args.duration} minutes? (y/n): ")
     if user_input.strip().lower() == "y":
       created_event = create_event(service, ai_finding_next_availabe_slot, args.duration, args.name, args.invites, args.id)
       print(f"✅ event created: {created_event.get('htmlLink')}")
