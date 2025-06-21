@@ -2,7 +2,6 @@ import argparse
 
 def get_args():
   parser = argparse.ArgumentParser(description="using gemini to find available time slots in a google calendar api and create events")
-  #TODO: test all arguments functionality
   parser.add_argument('-s', '--start', required=False, default='9:00 AM', help='attendance time start (default: 9:00 AM)')
   parser.add_argument('-e', '--end', required=False, default='6:00 PM', help='attendance time end (default: 6:00 PM)')
   parser.add_argument('-d', '--duration', required=False, default='60', help='event duration in minutes (default: 60)')

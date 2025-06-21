@@ -8,6 +8,9 @@ from src.usecases.gemini import find_next_available_slot
 from src.utils.date import format_datetime
 from src.utils.args import get_args
 
+#TODO: Check if makefile with args is working properly
+#TODO: Check attendance_time_start and attendance_time_end validation in gemini.py
+#TODO: test all arguments functionality
 def main():
   args = get_args()
   creds = get_credentials()

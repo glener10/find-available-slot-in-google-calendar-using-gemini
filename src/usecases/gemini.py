@@ -17,7 +17,6 @@ def get_api_key():
 def find_next_available_slot(events, attendance_time_start, attendance_time_end, attendance_minutes_duration):
     client = genai.Client(api_key=get_api_key())
     tz = get_local_timezone_offset()
-    #TODO: Check attendance_time_start and attendance_time_end validation
     prompt = (
       f"You are an event scheduling agent. Your task is to find the next available time slot to schedule an event.\n"
       f"The event must last {attendance_minutes_duration} minutes. "
