@@ -9,8 +9,6 @@ from src.utils.date import format_datetime
 from src.utils.args import get_args
 
 #TODO: Check if makefile with args is working properly
-#TODO: Check attendance_time_start and attendance_time_end validation in gemini.py
-#TODO: test all arguments functionality
 def main():
   args = get_args()
   creds = get_credentials()
@@ -19,7 +17,8 @@ def main():
     service = build("calendar", "v3", credentials=creds)
 
     now = datetime.datetime.now(tz=datetime.timezone.utc)
-    timeMin = (now + datetime.timedelta(minutes=int(args.waiting))).isoformat()
+    timeMinPlusWaitingTime = (now + datetime.timedelta(minutes=int(args.waiting)))
+    timeMin = timeMinPlusWaitingTime.isoformat()
     end_of_day = now.replace(hour=23, minute=59, second=59, microsecond=999999)
     timeMax = end_of_day.isoformat()
 
@@ -29,7 +28,7 @@ def main():
     print(f"☑ found {len(events)} events")
     formatted_events = format_events(events)
 
-    ai_finding_next_availabe_slot = find_next_available_slot(formatted_events, args.start, args.end, args.duration)
+    ai_finding_next_availabe_slot = find_next_available_slot(formatted_events, args.start, args.end, args.duration, timeMin)
 
     if ai_finding_next_availabe_slot.lower() == "no available slots":
       print("❌ no available slots found")
