@@ -4,11 +4,11 @@
 
 Execution Example
 
-![execution example](docs/images/example1.png)
+![execution example](docs/images/example3.png)
 
 Event Created
 
-![event created](docs/images/example2.png)
+![event created](docs/images/example4.png)
 
 <h3>🏁 Table of Contents</h3>
 
