@@ -1,8 +1,10 @@
 import unittest
+from unittest.mock import patch
 
-from .date import format_datetime
+from .date import format_datetime, get_local_timezone_name
 
 class TestDateUtils(unittest.TestCase):
+    # format_datetime
     def test_format_datetime_success_case(self):
         """
         Test string formatting a datetime string in ISO 8601 format
@@ -23,5 +25,19 @@ class TestDateUtils(unittest.TestCase):
         with self.assertRaises(ValueError):
             format_datetime(invalid_input)
 
+    # get_local_timezone_name
+    @patch('src.utils.date.tzlocal')
+    def test_get_local_timezone_name_success(self, mock_tzlocal):
+        """
+        Tests that the function correctly returns the local timezone name by mocking the external library.
+        """
+        expected_timezone = "America/Sao_Paulo"
+        mock_tzlocal.get_localzone.return_value = expected_timezone
+        
+        result = get_local_timezone_name()
+        
+        self.assertEqual(result, expected_timezone)
+        mock_tzlocal.get_localzone.assert_called_once()
+    
 if __name__ == '__main__':
     unittest.main()
