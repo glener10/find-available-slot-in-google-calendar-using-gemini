@@ -1,4 +1,4 @@
-SHELL := /bin/zsh
+SHELL := $(shell echo $$SHELL)
 
 .PHONY: run clean
 
