@@ -3,8 +3,7 @@ from unittest.mock import patch
 
 from .date import format_datetime, get_local_timezone_name
 
-class TestDateUtils(unittest.TestCase):
-    # format_datetime
+class TestFormatDatetime(unittest.TestCase):
     def test_format_datetime_success_case(self):
         """
         Test string formatting a datetime string in ISO 8601 format
@@ -25,7 +24,7 @@ class TestDateUtils(unittest.TestCase):
         with self.assertRaises(ValueError):
             format_datetime(invalid_input)
 
-    # get_local_timezone_name
+class TestGetLocalTimezoneName(unittest.TestCase):
     @patch('src.utils.date.tzlocal')
     def test_get_local_timezone_name_success(self, mock_tzlocal):
         """
