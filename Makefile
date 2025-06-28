@@ -3,7 +3,6 @@ SHELL := $(shell echo $$SHELL)
 .PHONY: run clean
 
 run:
-	@# Este bloco inteiro é executado em um único shell por causa das barras invertidas
 	@echo "Checking for 'venv' virtual environment..."
 	@if [ ! -d "venv" ]; then \
 		echo "'venv' virtual environment not found. Creating and installing dependencies..."; \
