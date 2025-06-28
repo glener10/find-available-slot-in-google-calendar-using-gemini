@@ -55,6 +55,18 @@ You can clean the environment using
 $ make clean
 ```
 
+Check files format with
+
+```
+$ make lint
+```
+
+Format files with
+
+```
+$ make format
+```
+
 Exec unit tests with
 
 ```
