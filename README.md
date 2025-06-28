@@ -35,6 +35,7 @@ Event Created
 Dependencies and versions
 
 - Python 3.10.12
+- Python 3.12.3
 
 <div id="using"></div>
 
@@ -64,14 +65,14 @@ Below are the arguments that can be used when running the script, with a brief e
 - `-e`, `--end`: Sets the end time to search for availability (default: **6:00 PM**).
 - `-d`, `--duration`: Duration of each event in minutes (default: **60**).
 - `-n`, `--name`: Name of the event to be created (default: **"Event created by Gemini"**).
-- `-id`, `--id`: Calendar ID where the event will be created (default: **"primary"**).
+- `--id`: Calendar ID where the event will be created (default: **"primary"**).
 - `-w`, `--waiting`: Waiting time (in minutes) to look for available slots (default: **30**).
 - `-i`, `--invites`: List of emails (comma-separated) to invite to the event (optional).
 
 Example executing with all arguments:
 
 ```
-$ make run ARGS="--start '8:00 AM' --end '6:00 PM' --duration '45' --name 'Reunião de Projeto' --id 'your_calendar_id@group.calendar.google.com' --waiting '15' --invites 'email1@example.com,email2@example.com'"
+$ make run ARGS="-s \"8:00 AM\" -e \"6:00 PM\" -d \"45\" -n \"Reunião de Projeto\" --id \"primary\" -w \"15\" -i \"glenerpizzolato@gmail.com\""
 ```
 
 <div id="author"></div>
