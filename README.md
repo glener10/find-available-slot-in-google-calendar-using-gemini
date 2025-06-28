@@ -55,6 +55,12 @@ You can clean the environment using
 $ make clean
 ```
 
+Exec unit tests with
+
+```
+$ make test
+```
+
 to exec:
 
 ```
