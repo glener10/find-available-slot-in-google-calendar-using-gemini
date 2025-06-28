@@ -37,6 +37,8 @@ Dependencies and versions
 - Python 3.10.12
 - Python 3.12.3
 
+**OBS**: This project is tested in Linux. For instructions on other operating systems, check the [Makefile](./Makefile) or exec directly.
+
 <div id="using"></div>
 
 ## ☕ **Using**
